@@ -1,0 +1,15 @@
+.main-header {
+  height: 80px;
+  width: 100%;
+  line-height: 80px;
+  background-color: gray;
+  text-align: center;
+  color: white;
+}
+
+.pull-left {
+  line-height: 80px;
+  font-size: 2.0em;
+  padding: 0;
+  margin: 0;
+}
