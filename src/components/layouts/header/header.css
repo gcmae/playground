@@ -2,9 +2,8 @@
   height: 80px;
   width: 100%;
   line-height: 80px;
-  background-color: gray;
+  background-color: #333333;
   text-align: center;
-  color: white;
 }
 
 .pull-left {
@@ -12,4 +11,17 @@
   font-size: 2.0em;
   padding: 0;
   margin: 0;
+  color: #00BFFF;
+}
+
+.pull-right {
+  float: right!important;
+}
+
+.pull-left　h1 {
+  line-height: 80px;
+  font-size: 2.0em;
+  padding: 0;
+  margin: 0;
+  color: #00BFFF;
 }

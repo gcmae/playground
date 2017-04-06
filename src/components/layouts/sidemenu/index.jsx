@@ -1,8 +1,22 @@
+/* React Core */
 import React, { Component } from 'react';
-import { slide as Menu } from 'react-burger-menu';
+
+/* Third Party */
+import { pushRotate as Menu } from 'react-burger-menu';
 import { Link } from 'react-router';
 import Radium from 'radium';
+import {
+  Image,
+  Icon,
+} from 'semantic-ui-react';
 
+/* Common */
+
+/* Image */
+import ReactIcon from './../../../assets/img/logo.svg';
+// import SideNavIcon from './../../../assets/img/sidenav.png';
+
+/* Style */
 import './sidemenu.css';
 
 const RadiumLink = Radium(Link);
@@ -14,10 +28,16 @@ class SideMenu extends Component {
         pageWrapId={'page-wrap'}
       >
         <h2>
-          画像
+          PlayGround
         </h2>
-        <RadiumLink className="menu-item" to="/">Top</RadiumLink>
-        <RadiumLink className="menu-item" to="/react-todo">React-Todo</RadiumLink>
+        <RadiumLink className="menu-item" to="/top">
+          <Icon name="home" size="large" />
+          <span>Top</span>
+        </RadiumLink>
+        <RadiumLink className="menu-item" to="/react-todo">
+          <Image src={ReactIcon} avatar />
+          <span>React-Todo</span>
+        </RadiumLink>
       </Menu>
     );
   }

@@ -8,7 +8,4 @@ import Router from './router/';
 /* Style */
 import './index.css';
 
-ReactDOM.render(
-  <Router />,
-  document.getElementById('root'),
-)
+ReactDOM.render(<Router />, document.getElementById('root'));

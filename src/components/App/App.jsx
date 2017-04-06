@@ -2,12 +2,24 @@
 import React, { Component } from 'react';
 
 /* Third Party */
+import {
+  Container,
+  Segment,
+  Divider,
+} from 'semantic-ui-react';
+import {
+  StickyContainer,
+} from 'react-sticky';
 
 /* Components */
+// Layouts
 import SideMenu from './../layouts/sidemenu/';
-import Header from './../layouts/header/';
+import StickHeader from './../layouts/header/';
+import Footer from './../layouts/footer/';
 
 /* Common */
+import SquareLoader from './../common/Loader/squareLoader/';
+import InfoMd from './../common/markdown/';
 
 /* Style */
 import './App.css';
@@ -15,17 +27,46 @@ import './App.css';
 class PlaygroundGcmae extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      loader: false,
+    };
   }
+  componentWillMount() {
+    setTimeout(() => {
+      this.setState({
+        loader: true,
+      });
+    }, 2000);
+  }
+
   render() {
     return (
       <div className="App">
-        <SideMenu />
-        <Header />
-        <main
-          id="page-wrap"
+        <StickHeader
+          loader
+        />
+        <SquareLoader
+          loader={this.state.loader}
+        />
+        <div
+          hidden={!this.state.loader}
         >
-          {this.props.children}
-        </main>
+          <SideMenu />
+          <main
+            id="page-wrap"
+          >
+            <Container>
+              {this.props.children}
+              <Divider />
+              <Container>
+                <Segment>
+                  <InfoMd location={this.props.location} />
+                </Segment>
+              </Container>
+            </Container>
+          </main>
+          <Footer />
+        </div>
       </div>
     );
   }
@@ -33,6 +74,7 @@ class PlaygroundGcmae extends Component {
 
 PlaygroundGcmae.propTypes = {
   children: React.PropTypes.object,
+  location: React.PropTypes.object,
 };
 
 export default PlaygroundGcmae;
