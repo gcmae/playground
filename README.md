@@ -1,4 +1,16 @@
-# gcmaeの技術結果一覧
+# gcmaeの技術結果一覧サイト
+gcmaeの成果物をまとめたサイトです。
 
-## ReactTodo
-create-react-appで作ったReactTodo
+## 動作確認
+
+$ git clone https://github.com/gemcook/playground-gcmae.git
+
+$ cd playground-gcmae
+
+$ yarn
+
+$ npm start
+
+## 以下へアクセス
+
+localhost:3000
