@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import {
   Container,
   Segment,
+  Divider,
 } from 'semantic-ui-react';
 import Markdown from 'react-markdown';
 
@@ -12,32 +13,33 @@ import Markdown from 'react-markdown';
 import reactTodo from './react-todo/md';
 
 const info = [
-  '# 動作確認', '',
+  '## 動作確認', '',
   '',
   '### $ git clone ',
   '### $ cd playground-gcmae ',
-  '### $ npm install ',
+  '### $ yarn',
   '### $ npm start ',
+  '## 以下へアクセス', '',
   '### localhost:3000 ',
   '',
 ].join('\n');
 
-let markdown = info;
+const markdown = info;
 
 class InfoMd extends Component {
   constructor(props) {
     super(props);
   }
-  componentDidUpdate(prevProps, prevState) {
-    markdown = info;
-    switch (this.props.location.pathname) {
-      case '/react-todo':
-        markdown = reactTodo;
-        break;
-      default:
-
-    }
-  }
+  // componentDidUpdate(prevProps, prevState) {
+  //   markdown = info;
+  //   switch (this.props.location.pathname) {
+  //     case '/react-todo':
+  //       markdown = reactTodo;
+  //       break;
+  //     default:
+  //
+  //   }
+  // }
 
   render() {
     return (

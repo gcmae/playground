@@ -25,9 +25,11 @@ class TodoList extends Component {
     this.props.Update(target, change)
   }
   Check(event, value) {
-    let taskId = value.value
+    let taskId = null
     if (event.currentTarget.getAttribute('data-number')) {
       taskId = event.currentTarget.getAttribute('data-number')
+    } else {
+      taskId = value.value
     }
     this.props.Check(taskId)
   }

@@ -7,9 +7,6 @@ import {
   Segment,
   Divider,
 } from 'semantic-ui-react';
-import {
-  StickyContainer,
-} from 'react-sticky';
 
 /* Components */
 // Layouts
@@ -58,11 +55,6 @@ class PlaygroundGcmae extends Component {
             <Container>
               {this.props.children}
               <Divider />
-              <Container>
-                <Segment>
-                  <InfoMd location={this.props.location} />
-                </Segment>
-              </Container>
             </Container>
           </main>
           <Footer />

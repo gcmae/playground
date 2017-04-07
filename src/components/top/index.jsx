@@ -4,6 +4,8 @@ import React, { Component } from 'react';
 /* Third Patry */
 import {
   Container,
+  Divider,
+  Segment,
   Header,
   Image,
 } from 'semantic-ui-react';
@@ -23,6 +25,12 @@ class TopComponent extends Component {
           <Header as="h1">
             Welcome To Playground-site of GCMAE
           </Header>
+        </Container>
+        <Divider />
+        <Container>
+          <Segment>
+            <InfoMd />
+          </Segment>
         </Container>
       </div>
     );

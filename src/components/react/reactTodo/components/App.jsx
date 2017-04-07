@@ -5,7 +5,7 @@ import {
   Grid,
   Divider,
   Input,
-  Menu,
+  Header,
 } from 'semantic-ui-react';
 
 // Components
@@ -111,15 +111,11 @@ class ReactTodo extends Component {
   render() {
     return (
       <div>
-        <Menu
-          attached
+        <Header
+          as="h2"
         >
-          <Menu.Item
-            as="h3"
-          >
-            React-Todo
-          </Menu.Item>
-        </Menu>
+          React-Todo
+        </Header>
         <Container>
           <Grid container>
             <Grid.Row>

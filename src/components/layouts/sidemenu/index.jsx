@@ -22,19 +22,32 @@ import './sidemenu.css';
 const RadiumLink = Radium(Link);
 
 class SideMenu extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      menuOpen: null,
+    };
+    this.handleMenuClick = this.handleMenuClick.bind(this);
+  }
+  handleMenuClick() {
+    this.setState({
+      menuOpen: false,
+    });
+  }
   render() {
     return (
       <Menu
         pageWrapId={'page-wrap'}
+        isOpen={this.state.menuOpen}
       >
         <h2>
           PlayGround
         </h2>
-        <RadiumLink className="menu-item" to="/top">
+        <RadiumLink className="menu-item" to="/top" onClick={this.handleMenuClick}>
           <Icon name="home" size="large" />
           <span>Top</span>
         </RadiumLink>
-        <RadiumLink className="menu-item" to="/react-todo">
+        <RadiumLink className="menu-item" to="/react-todo" onClick={this.handleMenuClick}>
           <Image src={ReactIcon} avatar />
           <span>React-Todo</span>
         </RadiumLink>
