@@ -13,9 +13,13 @@ import Markdown from 'react-markdown';
 import reactTodo from './react-todo/md';
 
 const info = [
+  '# gcmaeの技術結果一覧サイト', '',
+  '',
+  '### gcmaeの成果物をまとめたサイトです。',
+  '',
   '## 動作確認', '',
   '',
-  '### $ git clone ',
+  '### $ git clone https://github.com/gemcook/playground-gcmae.git ',
   '### $ cd playground-gcmae ',
   '### $ yarn',
   '### $ npm start ',
