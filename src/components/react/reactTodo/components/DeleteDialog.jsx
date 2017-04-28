@@ -1,29 +1,29 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import {
   Button,
   Header,
   Modal,
   Icon,
-} from 'semantic-ui-react'
+} from 'semantic-ui-react';
 
 class DeleteDialog extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       open: false,
-    }
-    this.ModalOpen = this.ModalOpen.bind(this)
-    this.close = this.close.bind(this)
-    this.Delete = this.Delete.bind(this)
+    };
+    this.ModalOpen = this.ModalOpen.bind(this);
+    this.close = this.close.bind(this);
+    this.Delete = this.Delete.bind(this);
   }
   ModalOpen() {
-    this.setState({ open: true })
+    this.setState({ open: true });
   }
   close() {
-    this.setState({ open: false })
+    this.setState({ open: false });
   }
   Delete() {
-    this.props.Delete(null, this.props.task)
+    this.props.Delete(null, this.props.task);
   }
   render() {
     return (
@@ -64,13 +64,13 @@ class DeleteDialog extends Component {
           </Button>
         </Modal.Actions>
       </Modal>
-    )
+    );
   }
 }
 
 DeleteDialog.propTypes = {
   task: React.PropTypes.object,
   Delete: React.PropTypes.func,
-}
+};
 
-export default DeleteDialog
+export default DeleteDialog;

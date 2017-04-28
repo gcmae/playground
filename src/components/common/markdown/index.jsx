@@ -2,15 +2,12 @@
 import React, { Component } from 'react';
 
 /* Third Party */
-import {
-  Container,
-  Segment,
-  Divider,
-} from 'semantic-ui-react';
 import Markdown from 'react-markdown';
 
-/* MarkDown */
-import reactTodo from './react-todo/md';
+/* General */
+import {
+  nVo,
+} from './../../../utils/General';
 
 const info = [
   '# gcmaeの技術結果一覧サイト', '',
@@ -37,6 +34,7 @@ const markdown = info;
 class InfoMd extends Component {
   constructor(props) {
     super(props);
+    nVo();
   }
   // componentDidUpdate(prevProps, prevState) {
   //   markdown = info;

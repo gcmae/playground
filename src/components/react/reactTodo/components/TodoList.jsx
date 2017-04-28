@@ -1,37 +1,37 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import {
   Table,
   Header,
   Checkbox,
-} from 'semantic-ui-react'
+} from 'semantic-ui-react';
 
 // Modal
-import UpdateDialog from './UpdateDialog'
-import DeleteDialog from './DeleteDialog'
+import UpdateDialog from './UpdateDialog';
+import DeleteDialog from './DeleteDialog';
 
 
 class TodoList extends Component {
   constructor(props) {
-    super(props)
-    this.Delete = this.Delete.bind(this)
-    this.Update = this.Update.bind(this)
-    this.Check = this.Check.bind(this)
+    super(props);
+    this.Delete = this.Delete.bind(this);
+    this.Update = this.Update.bind(this);
+    this.Check = this.Check.bind(this);
   }
   Delete(event, value) {
-    const task = value.target ? value.target : value.id
-    this.props.Delete(task)
+    const task = value.target ? value.target : value.id;
+    this.props.Delete(task);
   }
   Update(target, change) {
-    this.props.Update(target, change)
+    this.props.Update(target, change);
   }
   Check(event, value) {
-    let taskId = null
+    let taskId = null;
     if (event.currentTarget.getAttribute('data-number')) {
-      taskId = event.currentTarget.getAttribute('data-number')
+      taskId = event.currentTarget.getAttribute('data-number');
     } else {
-      taskId = value.value
+      taskId = value.value;
     }
-    this.props.Check(taskId)
+    this.props.Check(taskId);
   }
   render() {
     return (
@@ -85,11 +85,11 @@ class TodoList extends Component {
                   />
                 </Table.Cell>
               </Table.Row>
-            )
+            );
           })}
         </Table.Body>
       </Table>
-    )
+    );
   }
 }
 
@@ -98,6 +98,6 @@ TodoList.propTypes = {
   Delete: React.PropTypes.func,
   Check: React.PropTypes.func,
   Update: React.PropTypes.func,
-}
+};
 
-export default TodoList
+export default TodoList;

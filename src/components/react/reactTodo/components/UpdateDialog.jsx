@@ -1,38 +1,38 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import {
   Button,
   Header,
   Modal,
   Icon,
   Input,
-} from 'semantic-ui-react'
+} from 'semantic-ui-react';
 
 class UpdateDialog extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       open: false,
       text: this.props.task.value,
-    }
-    this.ModalOpen = this.ModalOpen.bind(this)
-    this.close = this.close.bind(this)
-    this.change = this.change.bind(this)
-    this.Update = this.Update.bind(this)
+    };
+    this.ModalOpen = this.ModalOpen.bind(this);
+    this.close = this.close.bind(this);
+    this.change = this.change.bind(this);
+    this.Update = this.Update.bind(this);
   }
   ModalOpen() {
-    this.setState({ open: true })
+    this.setState({ open: true });
   }
   close() {
-    this.setState({ open: false })
+    this.setState({ open: false });
   }
   change(event, value) {
     this.setState({
       text: value.value,
-    })
+    });
   }
   Update() {
-    this.props.Update(this.props.task.id, this.state.text)
-    this.close()
+    this.props.Update(this.props.task.id, this.state.text);
+    this.close();
   }
   render() {
     return (
@@ -74,13 +74,13 @@ class UpdateDialog extends Component {
           </Button>
         </Modal.Actions>
       </Modal>
-    )
+    );
   }
 }
 
 UpdateDialog.propTypes = {
   task: React.PropTypes.object,
   Update: React.PropTypes.func,
-}
+};
 
-export default UpdateDialog
+export default UpdateDialog;

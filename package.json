@@ -25,6 +25,7 @@
     "html-webpack-plugin": "^2.24.1",
     "intl-locales-supported": "^1.0.0",
     "node-sass": "^3.13.1",
+    "pui-react-panels": "^8.0.5",
     "radium": "^0.18.2",
     "react": "^15.4.1",
     "react-addons-css-transition-group": "^15.4.1",

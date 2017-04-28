@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import {
   Container,
   Button,
@@ -9,50 +9,58 @@ import {
 } from 'semantic-ui-react';
 
 // Components
-import TodoList from './TodoList'
+import TodoList from './TodoList';
+import ReactTodoElectron from './../../../electron/';
 // Functions
+
+// Style
+import './App.css';
 
 import {
   setLocal,
   getLocal,
-} from './../utils/WebStorage'
+} from './../utils/WebStorage';
+
+// Variables
+const macUrl = 'https://s3-us-west-2.amazonaws.com/gcmae-electron-place/reacttodo/ReactTodo-darwin-x64.zip';
+const winUrl = 'https://s3-us-west-2.amazonaws.com/gcmae-electron-place/reacttodo/ReactTodo-win32-x64.zip';
 
 class ReactTodo extends Component {
   constructor(props) {
-    super(props)
-    let task = []
+    super(props);
+    let task = [];
     if (getLocal()) {
-      task = getLocal()
+      task = getLocal();
     }
     this.state = {
       tasks: task,
       text: '',
-    }
-    this.handleChange = this.handleChange.bind(this)
-    this.AddTasks = this.AddTasks.bind(this)
-    this.makeTasks = this.makeTasks.bind(this)
-    this.addTasksRegist = this.addTasksRegist.bind(this)
-    this.handleDelete = this.handleDelete.bind(this)
-    this.handleUpdate = this.handleUpdate.bind(this)
-    this.handleCheck = this.handleCheck.bind(this)
-    this.UpdateState = this.UpdateState.bind(this)
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.AddTasks = this.AddTasks.bind(this);
+    this.makeTasks = this.makeTasks.bind(this);
+    this.addTasksRegist = this.addTasksRegist.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
+    this.handleUpdate = this.handleUpdate.bind(this);
+    this.handleCheck = this.handleCheck.bind(this);
+    this.UpdateState = this.UpdateState.bind(this);
   }
   // 入力
   handleChange(event, value) {
     this.setState({
       text: value.value,
-    })
+    });
   }
   // タスクの追加
   AddTasks(event) {
     if (!(this.state.text)) {
-      return
+      return;
     }
-    event.preventDefault()
+    event.preventDefault();
     this.setState(prevState => ({
       tasks: this.addTasksRegist(prevState.tasks.concat(this.makeTasks(this.state.text))),
       text: '',
-    }))
+    }));
   }
   // 整形
   makeTasks(taskName) {
@@ -60,62 +68,68 @@ class ReactTodo extends Component {
       value: taskName,
       id: new Date(),
       condition: false,
-    }
-    return task
+    };
+    return task;
   }
   // 力技
   addTasksRegist(prev) {
-    setLocal(prev)
+    setLocal(prev);
     // EditApi('POST', prev)
-    return prev
+    return prev;
   }
   // 削除
   handleDelete(targetTodo) {
-    const todo = this.state.tasks
+    const todo = this.state.tasks;
     todo.map((v, i) => {
-      if (v.id === targetTodo) { todo.splice(i, 1) }
-      return v.id
-    })
-    this.UpdateState(todo)
+      if (v.id === targetTodo) { todo.splice(i, 1); }
+      return v.id;
+    });
+    this.UpdateState(todo);
   }
   // 更新
   handleUpdate(targetTodo, changeTodo) {
-    const todo = this.state.tasks
+    const todo = this.state.tasks;
     todo.map((v, i) => {
       if (v.id === targetTodo) {
-        todo[i].value = changeTodo
+        todo[i].value = changeTodo;
       }
-      return v.id
-    })
-    this.UpdateState(todo)
+      return v.id;
+    });
+    this.UpdateState(todo);
   }
   // 完了 <=> 未完了
   handleCheck(targetTodo) {
-    const todo = this.state.tasks
+    const todo = this.state.tasks;
     todo.map((v, i) => {
       if ((v.id).toString() === targetTodo) {
-        todo[i].condition = !(todo[i].condition)
+        todo[i].condition = !(todo[i].condition);
       }
-      return v.id
-    })
-    this.UpdateState(todo)
+      return v.id;
+    });
+    this.UpdateState(todo);
   }
   // ステート更新
   UpdateState(value) {
     this.setState({
       tasks: value,
-    })
-    setLocal(value)
+    });
+    setLocal(value);
     // EditApi('POST', value)
   }
   render() {
     return (
       <div>
         <Header
-          as="h2"
+          as="h1"
         >
           React-Todo
         </Header>
+        <Container textAlign="right">
+          <ReactTodoElectron
+            macUrl={macUrl}
+            winUrl={winUrl}
+          />
+        </Container>
         <Container>
           <Grid container>
             <Grid.Row>
@@ -163,12 +177,12 @@ class ReactTodo extends Component {
           </Grid>
         </Container>
       </div>
-    )
+    );
   }
 }
 
 ReactTodo.propTypes = {
   tasks: React.PropTypes.array,
-}
+};
 
-export default ReactTodo
+export default ReactTodo;

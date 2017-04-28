@@ -14,6 +14,7 @@ import {
 
 /* Image */
 import ReactIcon from './../../../assets/img/logo.svg';
+// import ElectronIcon from './../../../assets/img/electron.svg';
 // import SideNavIcon from './../../../assets/img/sidenav.png';
 
 /* Style */
@@ -55,5 +56,10 @@ class SideMenu extends Component {
     );
   }
 }
+
+// <RadiumLink className="menu-item" to="/react-todo-electron" onClick={this.handleMenuClick}>
+//   <Image src={ElectronIcon} avatar />
+//   <span>React-Todo(Electron)</span>
+// </RadiumLink>
 
 export default SideMenu;
