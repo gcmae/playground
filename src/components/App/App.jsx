@@ -54,7 +54,6 @@ class PlaygroundGcmae extends Component {
           >
             <Container>
               {this.props.children}
-              <Divider />
             </Container>
           </main>
           <Footer />

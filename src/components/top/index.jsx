@@ -13,24 +13,20 @@ import {
 /* Component */
 import InfoMd from './../common/markdown';
 
+/* Style */
+import './../../assets/Crow/crow.css';
+
 /* Image */
-import TopIcon from './../../assets/img/sidenav.png';
+import TopIcon from './../../assets/img/top-header.png';
 
 class TopComponent extends Component {
   render() {
     return (
       <div>
         <Container>
-          <Image src={TopIcon} size="small" shape="circular" centered />
-          <Header as="h1">
-            Welcome To Playground-site of GCMAE
-          </Header>
-        </Container>
-        <Divider />
-        <Container>
-          <Segment>
-            <InfoMd />
-          </Segment>
+          <div className="crow" height="100%" >
+            <div>Welcome PlaygroundGcmae</div>
+          </div>
         </Container>
       </div>
     );
