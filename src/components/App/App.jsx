@@ -4,8 +4,6 @@ import React, { Component } from 'react';
 /* Third Party */
 import {
   Container,
-  Segment,
-  Divider,
 } from 'semantic-ui-react';
 
 /* Components */
@@ -16,7 +14,7 @@ import Footer from './../layouts/footer/';
 
 /* Common */
 import SquareLoader from './../common/Loader/squareLoader/';
-import InfoMd from './../common/markdown/';
+// import InfoMd from './../common/markdown/';
 
 /* Style */
 import './App.css';
@@ -65,7 +63,7 @@ class PlaygroundGcmae extends Component {
 
 PlaygroundGcmae.propTypes = {
   children: React.PropTypes.object,
-  location: React.PropTypes.object,
+  // location: React.PropTypes.object,
 };
 
 export default PlaygroundGcmae;

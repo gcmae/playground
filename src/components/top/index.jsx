@@ -11,7 +11,6 @@ import {
 } from 'semantic-ui-react';
 
 /* Component */
-import InfoMd from './../common/markdown';
 
 /* Style */
 import './../../assets/Crow/crow.css';

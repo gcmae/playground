@@ -2,6 +2,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+/* Import Library */
+import 'jspdf-autotable';
+
 /* Router */
 import Router from './router/';
 

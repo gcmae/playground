@@ -15,7 +15,7 @@ import {
 /* Image */
 import ReactIcon from './../../../assets/img/logo.svg';
 // import ElectronIcon from './../../../assets/img/electron.svg';
-// import SideNavIcon from './../../../assets/img/sidenav.png';
+import SideNavIcon from './../../../assets/img/top-header.png';
 
 /* Style */
 import './sidemenu.css';
@@ -41,9 +41,7 @@ class SideMenu extends Component {
         pageWrapId={'page-wrap'}
         isOpen={this.state.menuOpen}
       >
-        <h2>
-          PlayGround
-        </h2>
+        <Image src={SideNavIcon} fluid />
         <RadiumLink className="menu-item" to="/top" onClick={this.handleMenuClick}>
           <Icon name="home" size="large" />
           <span>Top</span>
@@ -51,6 +49,10 @@ class SideMenu extends Component {
         <RadiumLink className="menu-item" to="/react-todo" onClick={this.handleMenuClick}>
           <Image src={ReactIcon} avatar />
           <span>React-Todo</span>
+        </RadiumLink>
+        <RadiumLink className="menu-item" to="/react-generate-pdf" onClick={this.handleMenuClick}>
+          <Image src={ReactIcon} avatar />
+          <span>React-Generate-PDF</span>
         </RadiumLink>
       </Menu>
     );
