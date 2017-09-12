@@ -11,6 +11,7 @@ import {
 } from 'semantic-ui-react';
 
 /* Component */
+import ReactTwitter from './../common/ReactTwitter';
 
 /* Style */
 import './../../assets/Crow/crow.css';
@@ -25,6 +26,9 @@ class TopComponent extends Component {
         <Container>
           <div className="crow" height="100%" >
             <div>Welcome PlaygroundGcmae</div>
+          </div>
+          <div className="crow">
+            <ReactTwitter />
           </div>
         </Container>
       </div>
