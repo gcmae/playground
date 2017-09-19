@@ -19,16 +19,30 @@ import './../../assets/Crow/crow.css';
 /* Image */
 import TopIcon from './../../assets/img/top-header.png';
 
+const UserNames = [
+  'react_devv',
+  'voyagesister',
+  'ReactJS_News',
+  'Angular4U',
+  'Docker',
+  'angular',
+];
+
 class TopComponent extends Component {
   render() {
     return (
       <div>
         <Container>
-          <div className="crow" height="100%" >
-            <div>Welcome PlaygroundGcmae</div>
-          </div>
           <div className="crow">
-            <ReactTwitter />
+            {
+              UserNames.map((username) => {
+                return (
+                  <ReactTwitter
+                    username={username}
+                  />
+                );
+              })
+            }
           </div>
         </Container>
       </div>

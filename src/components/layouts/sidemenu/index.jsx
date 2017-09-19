@@ -50,9 +50,9 @@ class SideMenu extends Component {
           <Image src={ReactIcon} avatar />
           <span>React-Todo</span>
         </RadiumLink>
-        <RadiumLink className="menu-item" to="/react-generate-pdf" onClick={this.handleMenuClick}>
-          <Image src={ReactIcon} avatar />
-          <span>React-Generate-PDF</span>
+        <RadiumLink className="menu-item" to="/react-twitter" onClick={this.handleMenuClick}>
+          <Icon name="twitter" size="large" />
+          <span>React-Twitter</span>
         </RadiumLink>
       </Menu>
     );

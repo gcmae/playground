@@ -41,8 +41,8 @@ const config = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
-      filename: path.join(__dirname, 'build', 'index.html'),
-      inject: false,
+      filename: path.join(__dirname, 'index.html'),
+      inject: true,
     }),
     new CopyWebpackPlugin([{
       from: './src/assets/localScript/pdfmake',

@@ -10,14 +10,18 @@ const ReactTwitter = (props) => {
     <Timeline
       dataSource={{
         sourceType: 'profile',
-        screenName: 'voyagesister',
+        screenName: props.username,
       }}
       options={{
-        username: 'voyagesister',
+        username: props.username,
         height: '600',
       }}
     />
   );
+};
+
+ReactTwitter.propTypes = {
+  username: React.PropTypes.string,
 };
 
 export default ReactTwitter;
