@@ -3,7 +3,7 @@ import React from 'react';
 import {
   Accordion,
   Icon,
-  Input
+  Input,
 } from 'semantic-ui-react';
 
 import ReactTwitter from './../../common/ReactTwitter';
@@ -11,8 +11,9 @@ import ReactTwitter from './../../common/ReactTwitter';
 class ReactTwitterWidgets extends React.Component {
   constructor(props) {
     super(props);
+    const usern = localStorage.getItem('UserName');
     this.state = {
-      username: 'voyagesister',
+      username: usern || 'voyagesister',
     };
     this.handleChangeUserNames = this.handleChangeUserNames.bind(this);
   }
@@ -20,6 +21,7 @@ class ReactTwitterWidgets extends React.Component {
     this.setState({
       username: e.target.value,
     });
+    localStorage.setItem('UserName', e.target.value);
   }
   render() {
     return (
